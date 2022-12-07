@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating module</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="product product_1">
+            <h1>Product 1</h1>
+            <div class="rating">
+                <div class="outer">
+                    <div class="inner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="product product_2">
+            <h1>Product 2</h1>
+            <div class="rating">
+                <div class="outer">
+                    <div class="inner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="product product_3">
+            <h1>Product 3</h1>
+            <div class="rating">
+                <div class="outer">
+                    <div class="inner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ratings = {
+            product_1: 5,
+            product_2: 5,
+            product_3: 5,
+        }
+
+        for (const rating in ratings) {
+            let ratePercentage = (ratings[rating] / 5) * 100;
+            const inner = document.querySelector(`.${rating} .inner`)
+            inner.style.width = `${ratePercentage}%`
+        }
+    </script>
+    
+</body>
+</html>
